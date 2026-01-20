@@ -88,7 +88,7 @@ nav a:hover { color: var(--soft-blue); }
 
 /* --- HERO SECTION --- */
 .hero {
-    background: linear-gradient(135deg, var(--banner-purp) 20%, #00a2ffdd 80%);
+    background: var(--deep-plum);
     padding: 100px 20px;
     color: white;
     overflow: hidden;
@@ -256,7 +256,7 @@ nav a:hover { color: var(--soft-blue); }
     transition: 0.3s;
 }
 
-.form-group input:focus { border-color: var(--main-rose); outline: none; }
+.form-group input:focus { border-color: var(--shadow-hover); outline: none; }
 
 .submit-button {
     background: var(--deep-plum);
@@ -270,7 +270,7 @@ nav a:hover { color: var(--soft-blue); }
     transition: 0.3s;
 }
 
-.submit-button:hover { background: var(--main-rose); transform: translateY(-3px); }
+.submit-button:hover { background: var(--shadow-hover); transform: translateY(-3px); }
 
 /* --- FOOTER --- */
 .footer {
