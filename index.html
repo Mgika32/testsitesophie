@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sophie Secrétaire - Guichet unique pour vos démarches administratives.">
+    <title>Sophie Secrétaire - Votre Guichet Unique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo-site">
+                <span class="logo-icon">AS</span>
+                <span>Sophie Secrétaire</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#infos">Infos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="bio.html">A Propos</a></li>
+                    <li><a href="tarif.html">Tarifs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Marre De La paperasse ?</h1>
+            <h2>Sophie Ma Secrétaire à Domicile<br><span class="tab"></span>Vous En Débarasse !</h2>
+            <a href="#services" class="cta-button">Découvrir nos services</a>
+        </div>
+        
+        <div class="hero-logo-container">
+            <img src="/assets/logo.png" alt="Sophie Secrétaire Logo" class="main-hero-logo">
+        </div>
+    </div>
+</section>
+
+        <section class="section" id="services">
+    <h2 class="section-title">Mes Services</h2>
+    <div class="services-grid">
+        
+        <a href="Archivage.html" class="service-box">
+            <div class="service-content">
+                <i class="service-icon fa-solid fa-pen-nib"></i>
+                <h3>Classement Et Archivage</h3>
+                <p>Rédaction de courriers administratifs, CV, et aide aux formulaires complexes.</p>
+                <span class="cta-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="courrier.html" class="service-box">
+            <div class="service-content">
+                <i class="service-icon fa-solid fa-envelope-open-text"></i>
+                <h3>Gestion De Votre Courrier Et Courriels</h3>
+                <p>Tri, traitement et archivage de vos courriers papiers et numériques.</p>
+                <span class="cta-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="demarche.html" class="service-box">
+            <div class="service-content">
+                <i class="service-icon fa-solid fa-briefcase"></i>
+                <h3>Démarches Administratives</h3>
+                <p>Accompagnement France Travail et recherche de formations qualifiantes.</p>
+                <span class="cta-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <a href="bureautiques.html" class="service-box">
+            <div class="service-content">
+                <i class="service-icon fa-solid fa-heart-pulse"></i>
+                <h3>Travaux Bureautiques & Secrétariat</h3>
+                <p>Gestion de vos dossiers Ameli, mutuelles et mises à jour carte Vitale.</p>
+                <span class="cta-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<p><br><br></p>
+
+        <section class="section-timeline" id="infos">
+    <h2 class="section-title">Infos & Engagements</h2>
+    
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Horaires de la semaine</h3>
+                <p>Du Lundi au Vendredi : <strong>09h00 — 17h00</strong></p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Permanence Samedi</h3>
+                <p>Accueil le matin de <strong>09h00 à 12h00</strong></p>
+            </div>
+        </div>
+
+        <div class="timeline-item highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Confidentialité & Accueil</h3>
+                <p>Secret professionnel total, accès PMR et premier accueil gratuit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p><br><br></p>
+
+        <section class="section" id="contact">
+            <div class="contact-form">
+                <h2 id="contact-title">Prêt à simplifier <br> vos démarches ?</h2>
+                
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Comment vous appelez-vous ?</label>
+                        <input type="text" placeholder="Votre nom complet" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Où vous répondre ?</label>
+                        <input type="email" placeholder="Votre adresse email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quel service ?</label>
+                        <select required>
+                            <option value="" disabled selected>Choisir un service</option>
+                            <option value="redaction">Rédaction</option>
+                            <option value="emploi">Emploi</option>
+                            <option value="sante">Santé</option>
+                            <option value="logement">Logement</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" placeholder="06 .. .. .. ..">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Dites-moi en plus</label>
+                        <textarea rows="4" placeholder="Décrivez votre situation..."></textarea>
+                    </div>
+
+                    <div class="full-width">
+                        <button type="submit" class="submit-button">
+                            Envoyer ma demande <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>10 impasses de montededou, 81130 Mailhoc</p>
+        <p>&copy; 2025 Sophie Secrétaire - <a href="#">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>

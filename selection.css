@@ -1,0 +1,220 @@
+/* --- Grille 2x2 --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* --- Structure Flip --- */
+.flip-card {
+    background-color: transparent;
+    height: 420px; /* Augmenté pour le confort du texte */
+    perspective: 1200px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* --- Faces de la carte --- */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 25px; /* Coins arrondis "modern" */
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- FACE AVANT (Recto) --- */
+.flip-card-front {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-card-front .service-icon {
+    font-size: 3rem;
+    color: #000091;
+    margin-bottom: 20px;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000091;
+}
+
+.flip-card-front p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- FACE ARRIÈRE (Verso - Style Image) --- */
+.flip-card-back {
+    background: radial-gradient(circle at top left, #004a99, #000066);
+    color: white;
+    transform: rotateY(180deg);
+    justify-content: space-between; /* Espace le titre du bouton */
+    align-items: flex-start; /* Aligné à gauche pour la lecture */
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 74, 153, 0.3);
+}
+
+.flip-card-back h3 {
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.flip-card-back p, .flip-card-back li {
+    font-size: 0.92rem; /* Texte légèrement plus petit pour la densité */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.flip-card-back ul {
+    list-style: none;
+    padding: 0;
+}
+
+.flip-card-back li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.flip-card-back li i {
+    color: #6A6AF4; /* Couleur des checkmarks */
+    margin-top: 4px;
+}
+
+/* --- Bouton "Page complète" --- */
+.cta-mini {
+    align-self: center; /* Centre le bouton en bas */
+    background: white;
+    color: #004a99;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.cta-mini:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .services-grid { grid-template-columns: 1fr; max-width: 450px; }
+}
+
+/* --- Animation de l'icône au survol --- */
+.flip-card:hover .service-icon {
+    transform: scale(1.1) translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* --- L'effet de brillance (Glossy Effect) --- */
+.flip-card-front::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    transition: transform 0.6s ease-out, opacity 0.6s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flip-card:hover .flip-card-front::before {
+    transform: scale(1);
+    opacity: 0.1; /* Très subtil sur le blanc */
+}
+
+/* --- Effet de bordure lumineuse sur le Verso --- */
+.flip-card-back {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure fine vitrée */
+}
+
+/* Petit reflet qui passe sur la carte au survol du verso */
+.flip-card-back::after {
+    content: "";
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.05) 45%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0.05) 55%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: rotate(30deg);
+    transition: all 0.7s italic;
+}
+
+.flip-card.flipped:hover .flip-card-back::after {
+    left: 100%;
+    top: 100%;
+    transition: all 0.7s ease;
+}
+
+/* --- Ombre portée dynamique --- */
+.flip-card {
+    transition: transform 0.3s ease;
+}
+
+.flip-card:hover {
+    /* La carte semble s'élever avant de se retourner */
+    transform: translateY(-10px);
+}
+
+.flip-card.flipped:hover {
+    /* Garde l'élévation même quand elle est retournée */
+    transform: translateY(-10px) rotateY(180deg);
+}
+
+/* --- Le bouton "Plus de détails" au Recto --- */
+.read-more i {
+    transition: transform 0.3s ease;
+}
+
+.flip-card:hover .read-more i {
+    transform: rotate(90deg); /* L'icône rotate tourne avec élégance */
+    color: var(--primary-light);
+}
